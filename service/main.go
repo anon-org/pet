@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/anon-org/arithmetic/api"
 	"github.com/anon-org/arithmetic/impl"
+	"log"
 	"net/http"
 )
 
@@ -27,6 +28,7 @@ func main() {
 }
 
 func fetch(svc api.Service, w http.ResponseWriter, r *http.Request) {
+	log.Println("fetching...")
 	results, err := svc.Fetch(r.Context())
 	if err != nil {
 		json.NewEncoder(w).Encode(err)
@@ -38,6 +40,8 @@ func fetch(svc api.Service, w http.ResponseWriter, r *http.Request) {
 func store(svc api.Service, w http.ResponseWriter, r *http.Request) {
 	var req api.Request
 	json.NewDecoder(r.Body).Decode(&req)
+
+	log.Printf("storing %s\n", req.Name)
 	results, err := svc.Store(r.Context(), req.Name)
 	if err != nil {
 		json.NewEncoder(w).Encode(err)

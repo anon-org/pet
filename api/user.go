@@ -1,28 +1,24 @@
 package api
 
-import "encoding/json"
+import (
+	"bytes"
+	"encoding/json"
+)
 
 type Users []*User
 
 func (u Users) String() string {
-	b, err := json.Marshal(u)
-	if err != nil {
+	var b bytes.Buffer
+	e := json.NewEncoder(&b)
+	e.SetIndent("", "  ")
+	if err := e.Encode(u); err != nil {
 		return "[]"
 	}
 
-	return string(b)
+	return b.String()
 }
 
 type User struct {
 	ID   string
 	Name string
-}
-
-func (u User) String() string {
-	b, err := json.Marshal(u)
-	if err != nil {
-		return "{}"
-	}
-
-	return string(b)
 }
