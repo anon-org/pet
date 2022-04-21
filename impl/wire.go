@@ -3,7 +3,7 @@
 package impl
 
 import (
-	"github.com/anon-org/arithmetic/api"
+	"github.com/anon-org/pet/api"
 	"github.com/google/wire"
 )
 

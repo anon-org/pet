@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/anon-org/arithmetic/api"
+	"github.com/anon-org/pet/api"
 	"net/http"
 	"time"
 )

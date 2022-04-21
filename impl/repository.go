@@ -2,7 +2,7 @@ package impl
 
 import (
 	"context"
-	"github.com/anon-org/arithmetic/api"
+	"github.com/anon-org/pet/api"
 	"github.com/google/uuid"
 	"sync"
 )

@@ -3,7 +3,7 @@ package impl
 import (
 	"context"
 	"errors"
-	"github.com/anon-org/arithmetic/api"
+	"github.com/anon-org/pet/api"
 	"strings"
 )
 

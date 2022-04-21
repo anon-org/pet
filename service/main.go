@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/anon-org/arithmetic/api"
-	"github.com/anon-org/arithmetic/impl"
+	"github.com/anon-org/pet/api"
+	"github.com/anon-org/pet/impl"
 	"log"
 	"net/http"
 )

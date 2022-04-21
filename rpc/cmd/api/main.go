@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/anon-org/arithmetic/api"
-	"github.com/anon-org/arithmetic/rpc"
+	"github.com/anon-org/pet/api"
+	"github.com/anon-org/pet/rpc"
 	. "github.com/dustinkirkland/golang-petname"
 	"math/rand"
 	"time"

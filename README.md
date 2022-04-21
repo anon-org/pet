@@ -3,7 +3,7 @@
 ## Download
 
 ```shell
-$ git clone http://github.com/anon-org/arithmetic
+$ git clone http://github.com/anon-org/pet
 $ cd arithmetic
 $ make wire
 ```
