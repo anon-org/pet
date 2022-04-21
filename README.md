@@ -5,7 +5,6 @@
 ```shell
 $ git clone http://github.com/anon-org/pet
 $ cd pet
-$ make wire
 ```
 
 ## Run
