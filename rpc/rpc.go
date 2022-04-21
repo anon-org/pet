@@ -36,18 +36,13 @@ func (r rpc) Fetch(ctx context.Context) (api.Users, error) {
 	return result, json.NewDecoder(resp.Body).Decode(&result)
 }
 
-func (r rpc) FetchByID(ctx context.Context, id string) (*api.User, error) {
-	//TODO implement me
-	panic("implement me")
-}
-
 func (r rpc) Store(ctx context.Context, name string) (*api.User, error) {
 	url := fmt.Sprintf("%s/", r.BaseURL)
 
 	ctx, cancel := context.WithTimeout(ctx, r.Timeout)
 	defer cancel()
 
-	b, err := json.Marshal(api.RequestWithName{Name: name})
+	b, err := json.Marshal(api.Request{Name: name})
 	if err != nil {
 		return nil, err
 	}
@@ -65,14 +60,4 @@ func (r rpc) Store(ctx context.Context, name string) (*api.User, error) {
 
 	var result *api.User
 	return result, json.NewDecoder(resp.Body).Decode(&result)
-}
-
-func (r rpc) Patch(ctx context.Context, id, name string) error {
-	//TODO implement me
-	panic("implement me")
-}
-
-func (r rpc) Destroy(ctx context.Context, id string) error {
-	//TODO implement me
-	panic("implement me")
 }

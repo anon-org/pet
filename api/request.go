@@ -1,9 +1,5 @@
 package api
 
-type RequestWithID struct {
-	ID string `json:"id"`
-}
-
-type RequestWithName struct {
+type Request struct {
 	Name string `json:"name"`
 }

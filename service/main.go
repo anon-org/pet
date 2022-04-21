@@ -16,24 +16,32 @@ func main() {
 
 		switch r.Method {
 		case http.MethodGet:
-			results, err := svc.Fetch(r.Context())
-			if err != nil {
-				json.NewEncoder(w).Encode(err)
-			} else {
-				json.NewEncoder(w).Encode(results)
-			}
+			fetch(svc, w, r)
 		case http.MethodPost:
-			var req api.RequestWithName
-			json.NewDecoder(r.Body).Decode(&req)
-			results, err := svc.Store(r.Context(), req.Name)
-			if err != nil {
-				json.NewEncoder(w).Encode(err)
-			} else {
-				json.NewEncoder(w).Encode(results)
-			}
+			store(svc, w, r)
 		}
 	})
 
 	fmt.Println("listening at :8000")
 	http.ListenAndServe(":8000", nil)
+}
+
+func fetch(svc api.Service, w http.ResponseWriter, r *http.Request) {
+	results, err := svc.Fetch(r.Context())
+	if err != nil {
+		json.NewEncoder(w).Encode(err)
+	} else {
+		json.NewEncoder(w).Encode(results)
+	}
+}
+
+func store(svc api.Service, w http.ResponseWriter, r *http.Request) {
+	var req api.Request
+	json.NewDecoder(r.Body).Decode(&req)
+	results, err := svc.Store(r.Context(), req.Name)
+	if err != nil {
+		json.NewEncoder(w).Encode(err)
+	} else {
+		json.NewEncoder(w).Encode(results)
+	}
 }
