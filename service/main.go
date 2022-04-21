@@ -4,13 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/anon-org/pet/api"
-	"github.com/anon-org/pet/service"
 	"log"
 	"net/http"
 )
 
 func main() {
-	svc := service.Wire(make(map[string]*api.User))
+	svc := Wire(make(map[string]*api.User))
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		defer r.Body.Close()

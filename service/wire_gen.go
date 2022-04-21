@@ -4,7 +4,7 @@
 //go:build !wireinject
 // +build !wireinject
 
-package service
+package main
 
 import (
 	"github.com/anon-org/pet/api"

@@ -24,6 +24,8 @@ $ make rpc
 
 ## Example
 
+See RPC usage example [here](rpc/example/main.go)
+
 ### service
 
 ```shell
@@ -48,7 +50,7 @@ $ make rpc
   }
 ]
 
-$ go run rpc/cmd/api/main.go
+$ go run rpc/example/api/main.go
 [
   {
     "ID": "c559b192-d428-451f-8ef7-4c36e3576068",
@@ -60,7 +62,7 @@ $ go run rpc/cmd/api/main.go
   }
 ]
 
-$ go run rpc/cmd/api/main.go
+$ go run rpc/example/api/main.go
 [
   {
     "ID": "c559b192-d428-451f-8ef7-4c36e3576068",

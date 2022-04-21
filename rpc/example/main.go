@@ -15,21 +15,21 @@ func init() {
 }
 
 func main() {
-	wire := rpc.Wire("http://localhost:8000", 60*time.Second)
+	pet := rpc.Wire("http://localhost:8000", 60*time.Second)
 
-	store(wire)
-	fetch(wire)
+	store(pet)
+	fetch(pet)
 }
 
-func store(rpc api.Service) {
-	_, err := rpc.Store(context.Background(), Name())
+func store(pet api.Service) {
+	_, err := pet.Store(context.Background(), Name())
 	if err != nil {
 		panic(err)
 	}
 }
 
-func fetch(rpc api.Service) {
-	result, err := rpc.Fetch(context.Background())
+func fetch(pet api.Service) {
+	result, err := pet.Fetch(context.Background())
 	if err != nil {
 		panic(err)
 	}
