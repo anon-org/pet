@@ -1,7 +1,7 @@
 .PHONY: service rpc
 
 service:
-	@go run ./service/
+	@go run ./service/cmd
 
 rpc:
 	@go run ./rpc/cmd/

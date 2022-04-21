@@ -1,4 +1,4 @@
-package rpc
+package internal
 
 import (
 	"bytes"
@@ -10,12 +10,12 @@ import (
 	"time"
 )
 
-type rpc struct {
+type Rpc struct {
 	BaseURL string
 	Timeout time.Duration
 }
 
-func (r rpc) Fetch(ctx context.Context) (api.Users, error) {
+func (r Rpc) Fetch(ctx context.Context) (api.Users, error) {
 	url := fmt.Sprintf("%s/", r.BaseURL)
 
 	ctx, cancel := context.WithTimeout(ctx, r.Timeout)
@@ -36,7 +36,7 @@ func (r rpc) Fetch(ctx context.Context) (api.Users, error) {
 	return result, json.NewDecoder(resp.Body).Decode(&result)
 }
 
-func (r rpc) Store(ctx context.Context, name string) (*api.User, error) {
+func (r Rpc) Store(ctx context.Context, name string) (*api.User, error) {
 	url := fmt.Sprintf("%s/", r.BaseURL)
 
 	ctx, cancel := context.WithTimeout(ctx, r.Timeout)

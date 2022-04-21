@@ -1,4 +1,4 @@
-package rpc
+package internal
 
 import (
 	"github.com/anon-org/pet/api"
@@ -8,19 +8,19 @@ import (
 )
 
 var (
-	r     *rpc
+	r     *Rpc
 	rOnce sync.Once
 
 	ProviderSet wire.ProviderSet = wire.NewSet(
 		ProvideRpc,
 
-		wire.Bind(new(api.Service), new(*rpc)),
+		wire.Bind(new(api.Service), new(*Rpc)),
 	)
 )
 
-func ProvideRpc(baseURL string, timeout time.Duration) *rpc {
+func ProvideRpc(baseURL string, timeout time.Duration) *Rpc {
 	rOnce.Do(func() {
-		r = &rpc{
+		r = &Rpc{
 			BaseURL: baseURL,
 			Timeout: timeout,
 		}

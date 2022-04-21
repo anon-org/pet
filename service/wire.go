@@ -1,6 +1,6 @@
 //go:build wireinject
 
-package main
+package service
 
 import (
 	"github.com/anon-org/pet/api"
