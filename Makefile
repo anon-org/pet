@@ -1,10 +1,10 @@
 .PHONY: service rpc
 
 service:
-	@go run service/main.go
+	@go run ./service/
 
 rpc:
-	@go run rpc/cmd/api/main.go
+	@go run ./rpc/cmd/
 
 wire:
 	@go run github.com/google/wire/cmd/wire@v0.5.0 ./rpc ./service/

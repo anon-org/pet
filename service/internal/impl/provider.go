@@ -1,4 +1,4 @@
-package internal
+package impl
 
 import (
 	"github.com/anon-org/pet/api"
