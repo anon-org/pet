@@ -1,3 +1,5 @@
+.PHONY: service rpc
+
 service:
 	@go run service/main.go
 
