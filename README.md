@@ -4,7 +4,7 @@
 
 ```shell
 $ git clone http://github.com/anon-org/pet
-$ cd arithmetic
+$ cd pet
 $ make wire
 ```
 
