@@ -1,7 +1,5 @@
-github.com/anon-org/pet/api v0.0.0-20220421133834-cd690aa3995b h1:Gqp1VzuSc95cGYCZpvU2DgN87UztV5WE7Xs9aDj43Z0=
-github.com/anon-org/pet/api v0.0.0-20220421133834-cd690aa3995b/go.mod h1:9Zkllz7ifupF6Sw4NsgTVAZJjIeJza4NSKPf5jBv1x8=
-github.com/anon-org/pet/api v0.0.0-20220421134415-30920651adcf h1:0D+3P1vUeKJEXKoyudvbEqMroMvb+geOw6lQg0BNgh8=
-github.com/anon-org/pet/api v0.0.0-20220421134415-30920651adcf/go.mod h1:9Zkllz7ifupF6Sw4NsgTVAZJjIeJza4NSKPf5jBv1x8=
+github.com/anon-org/pet/api v0.0.0-20220421150420-6802bbb8cece h1:ZM2XCQhTOXCBnxeI1WOvr5nCtrMwQfYG8BzxaH2pj04=
+github.com/anon-org/pet/api v0.0.0-20220421150420-6802bbb8cece/go.mod h1:j3AB0mgFYxc1iLZGO87/BQNDrmhuEJ50Fe5ze2/J5Z0=
 github.com/google/go-cmp v0.2.0/go.mod h1:oXzfMopK8JAjlY9xF4vHSVASa0yLyX7SntLO5aqRK0M=
 github.com/google/subcommands v1.0.1/go.mod h1:ZjhPrFU+Olkh9WazFPsl27BQ4UPiG37m3yTrtFlrHVk=
 github.com/google/uuid v1.3.0 h1:t6JiXgmwXMjEs8VusXIJk2BXHsn+wx8BZdTaoZ5fu7I=
