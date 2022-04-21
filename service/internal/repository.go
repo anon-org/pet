@@ -1,4 +1,4 @@
-package impl
+package internal
 
 import (
 	"context"
@@ -7,12 +7,12 @@ import (
 	"sync"
 )
 
-type repository struct {
+type Repository struct {
 	sync.RWMutex
 	db map[string]*api.User
 }
 
-func (r *repository) Fetch(ctx context.Context) api.Users {
+func (r *Repository) Fetch(ctx context.Context) api.Users {
 	r.Lock()
 	defer r.Unlock()
 
@@ -26,7 +26,7 @@ func (r *repository) Fetch(ctx context.Context) api.Users {
 	return users
 }
 
-func (r *repository) Store(ctx context.Context, name string) (*api.User, error) {
+func (r *Repository) Store(ctx context.Context, name string) (*api.User, error) {
 	r.Lock()
 	defer r.Unlock()
 

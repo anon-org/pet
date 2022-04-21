@@ -3,7 +3,7 @@ module github.com/anon-org/pet/rpc
 go 1.18
 
 require (
-	github.com/anon-org/pet/api v0.0.0-20220421151119-e1932dbd223b
+	github.com/anon-org/pet/api v0.0.1
 	github.com/google/wire v0.5.0
 )
 

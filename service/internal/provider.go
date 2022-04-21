@@ -1,4 +1,4 @@
-package impl
+package internal
 
 import (
 	"github.com/anon-org/pet/api"
@@ -7,23 +7,23 @@ import (
 )
 
 var (
-	repo     *repository
+	repo     *Repository
 	repoOnce sync.Once
 
-	svc         *service
+	svc         *Service
 	svcOnce     sync.Once
 	ProviderSet wire.ProviderSet = wire.NewSet(
 		ProvideRepository,
 		ProvideService,
 
-		wire.Bind(new(api.Repository), new(*repository)),
-		wire.Bind(new(api.Service), new(*service)),
+		wire.Bind(new(api.Repository), new(*Repository)),
+		wire.Bind(new(api.Service), new(*Service)),
 	)
 )
 
-func ProvideRepository(db map[string]*api.User) *repository {
+func ProvideRepository(db map[string]*api.User) *Repository {
 	repoOnce.Do(func() {
-		repo = &repository{
+		repo = &Repository{
 			db: db,
 		}
 	})
@@ -31,9 +31,9 @@ func ProvideRepository(db map[string]*api.User) *repository {
 	return repo
 }
 
-func ProvideService(repo api.Repository) *service {
+func ProvideService(repo api.Repository) *Service {
 	svcOnce.Do(func() {
-		svc = &service{
+		svc = &Service{
 			repo: repo,
 		}
 	})
