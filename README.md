@@ -50,7 +50,7 @@ $ make rpc
   }
 ]
 
-$ go run rpc/example/api/main.go
+$ make rpc
 [
   {
     "ID": "c559b192-d428-451f-8ef7-4c36e3576068",
@@ -62,7 +62,7 @@ $ go run rpc/example/api/main.go
   }
 ]
 
-$ go run rpc/example/api/main.go
+$ make rpc
 [
   {
     "ID": "c559b192-d428-451f-8ef7-4c36e3576068",
